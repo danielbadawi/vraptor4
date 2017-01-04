@@ -335,4 +335,15 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<url>http://nexus.preventsenior.io/nexus/content/repositories/thirdparty</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://nexus.preventsenior.io/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
