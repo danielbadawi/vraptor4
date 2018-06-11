@@ -27,6 +27,7 @@ import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.jstl.core.Config;
 import javax.servlet.jsp.jstl.fmt.LocalizationContext;
 
@@ -119,7 +120,8 @@ public class JstlLocalization {
 			return value;
 		}
 
-		value = Config.get(request.getSession(), key);
+		HttpSession session = request.getSession(false);
+		value = Config.get(session, key);
 		if (value != null) {
 			return value;
 		}
